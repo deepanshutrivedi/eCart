@@ -1,0 +1,69 @@
+<mat-card>
+    <form (submit)="onFormSave(formdata)" #formdata="ngForm">
+      <mat-form-field>
+        <input 
+        type="text"
+        matInput 
+        name="fname"
+        ngModel
+        #fname="ngModel"
+        placeholder="First Name"
+        required>
+        <mat-error *ngIf="fname.invalid">Please enter your First Name.</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input 
+        type="text"
+        matInput 
+        name="lname"
+        ngModel
+        placeholder="Last Name"
+        #lname="ngModel"
+        required>
+        <mat-error *ngIf="lname.invalid">Please enter your Last Name.</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input
+        type="text"
+        matInput 
+        maxlength="10"
+        minlength="10"
+        name="mobile"
+        ngModel
+        placeholder="Mobile No."
+        #mobile="ngModel"
+        required>
+        <mat-error *ngIf="mobile.invalid">Please enter your Mobile No.</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input 
+        type="email"
+        matInput 
+        name="email"
+        ngModel        
+        placeholder="E-mail"
+        #email="ngModel"
+        required>
+        <mat-error *ngIf="email.invalid">Please enter your E-mail.</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input 
+        type="password"
+        name="password"
+        ngModel
+        matInput placeholder="Enter your password"
+        #password="ngModel"
+        required>
+        <mat-error *ngIf="password.invalid">Please enter your password.</mat-error>
+      </mat-form-field>
+      <br><br>
+      <button 
+      mat-raised-button 
+      type="submit">Save</button>
+    </form>
+  </mat-card>
+  
